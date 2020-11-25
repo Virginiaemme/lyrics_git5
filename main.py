@@ -1,4 +1,4 @@
-from lyrics import get_lyric
+from music_package import get_lyric
 
 artist = "Beatles"
 title= "Across the Universe"
