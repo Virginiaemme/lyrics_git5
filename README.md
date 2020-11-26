@@ -25,7 +25,7 @@ Possessing and caressing me.
 
 :warning: Note that the project requires the following modules to run: ```json``` , ```requests```, ```argparse```, ```sys``` modules. 
 
-A user can choose, ```title``` ( **Across the Universe** in th eexample)by the specified ```artist``` (**Beatles** in the example) in order to get as output the lyrics.
+A user can choose, ```title``` ( **Across the Universe** in the example) by the specified ```artist``` (**Beatles** in the example) in order to get as output the lyrics.
 
 ** AUTHENTICATION **
 
@@ -39,7 +39,7 @@ A user can choose, ```title``` ( **Across the Universe** in th eexample)by the s
 ## AUTHORS AND ACKNOWLEDGEMNT
 
 ## LICENSE
-[APACHE 2.0] (https://choosealicense.com/licenses/apache-2.0/)
+[APACHE 2.0](https://choosealicense.com/licenses/apache-2.0/)
 
 
 
