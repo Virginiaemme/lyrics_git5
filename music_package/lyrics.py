@@ -17,3 +17,18 @@ def get_lyric( artist, title):
         pass
 
     return song
+
+
+
+
+
+def get_tabs_id():
+
+    Artist = input("Please enter the Artist whose song you are looking for: ")
+
+    r = requests.get('http://www.songsterr.com/a/ra/songs.json?pattern=' + Artist)
+
+    my_dict = r.json()
+
+    return(my_dict, 'You will find the tabs of the song by googling http://www.songsterr.com/a/wa/song?id= and add the id of the song you want' )
+
