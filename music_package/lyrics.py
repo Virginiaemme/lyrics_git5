@@ -1,6 +1,17 @@
 import requests
 import json
 
+""" 
+
+The function returns the lyrics of a song given the title and the artist.
+    
+    :param artist: artist name
+    :type artist: string
+    :param title: title of the song
+    :type title: string
+
+"""
+
 SONG_URL = 'https://api.lyrics.ovh/v1/{}/{}'
 
 
@@ -20,6 +31,11 @@ def get_lyric( artist, title):
 
 
 
+""" 
+
+The function returns the guitar tabs of a song.
+
+"""
 
 
 def get_tabs_id():
