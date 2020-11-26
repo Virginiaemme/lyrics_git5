@@ -1,7 +1,14 @@
-## Implementation of a Song Lyrics Fetcher
+## IMPLEMENTATION of a SONG LYRICS FETCHER :music:
 
 
-In this repository you can find a file named ```lyrics.py``` that implements the ```get_lyric( artist, title)``` function. It queries the [lyrics.ovh](https://lyricsovh.docs.apiary.io/#) website to fetch the lyrics of a song ```title``` by the specified ```artist```.
+In this repository you can find a file named ```lyrics.py``` that queries the [lyrics.ovh](https://lyricsovh.docs.apiary.io/#) website to fetch the lyrics of a song. 
+
+!!!(TO BE MENTIONED EVENTUAL FURTHER FUNCTIONALITIES)
+
+To do that the file ```lyrics.py``` implements the ```get_lyric( artist, title)``` function. 
+
+
+
 If you run the program, executing the main file with: ```python main.py``` it will give you results similar to the following: 
 
 ```
@@ -16,5 +23,23 @@ Possessing and caressing me.
 ...
 ```
 
-Note that the project requires the ```json``` and ```requests``` modules to run.
+:warning: Note that the project requires the following modules to run: ```json``` , ```requests```, ```argparse```, ```sys``` modules. 
+
+A user can choose, ```title``` ( **Across the Universe** in th eexample)by the specified ```artist``` (**Beatles** in the example) in order to get as output the lyrics.
+
+** AUTHENTICATION **
+
+
+## DOCUMENTATION
+
+## TESTING
+
+## SUPPORT
+
+## AUTHORS AND ACKNOWLEDGEMNT
+
+## LICENSE
+[APACHE 2.0] (https://choosealicense.com/licenses/apache-2.0/)
+
+
 
