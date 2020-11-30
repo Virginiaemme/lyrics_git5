@@ -38,13 +38,11 @@ The function returns the guitar tabs of a song.
 """
 
 
-def get_tabs_id():
+def get_tabs_id(artist):
 
-    Artist = input("Please enter the Artist whose song you are looking for: ")
-
-    r = requests.get('http://www.songsterr.com/a/ra/songs.json?pattern=' + Artist)
+    r = requests.get('http://www.songsterr.com/a/ra/songs.json?pattern=' + artist)
 
     my_dict = r.json()
 
-    return(my_dict, 'You will find the tabs of the song by googling http://www.songsterr.com/a/wa/song?id= and add the id of the song you want' )
+    return (my_dict, 'You will find the tabs of the song by googling http://www.songsterr.com/a/wa/song?id= and add the id of the song you want' )
 
