@@ -18,7 +18,7 @@ if __name__ == "__main__":
     ''' Execute code only if the file was run directly.'''
     databmanager.open_and_create('database.db')
     args = parse_args()
-    if dbmanager.check_user(args.usr, args.psw):
+    if databmanager.check_user(args.usr, args.psw):
         ly.get_lyric(args.artist, args.title)
         ta.get_tabs_id (args.artist)
     else:
