@@ -29,6 +29,9 @@ A user can choose, ```title``` ( **Across the Universe** in the example) by the 
 
 ** AUTHENTICATION **
 
+Descrizione divisione packages e moduli e aggiungerei anche 
+The __init__.py files are required to make Python treat directories containing the file as packages: just ignore it!
+
 
 ## DOCUMENTATION
 
