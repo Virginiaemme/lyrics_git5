@@ -1,5 +1,8 @@
-from music_package import lyrics.py
-from music_package import tabs.py
+from music_package import lyrics.py as ly
+from music_package import tabs.py as ta
+import argparse
+import os
+import databmanager
 
 def argparse(): #here we collect the inputs, the results will be organized in arrays and inserted in the url
     parser = argparse.ArgumentParser()
@@ -8,3 +11,18 @@ def argparse(): #here we collect the inputs, the results will be organized in ar
     parser.add_argument('-v','--verbosity',help='increase output verbosity', action='store_true')
     args = parser.parse_args()
     return args
+
+
+
+if __name__ == "__main__":
+    ''' Execute code only if the file was run directly.'''
+    databmanager.open_and_create('database.db')
+    args = parse_args()
+    if dbmanager.check_user(args.usr, args.psw):
+        ly.get_lyric(args.artist, args.title)
+        ta.get_tabs_id (args.artist)
+    else:
+        print('''
+              Sorry, wrong username password selected!
+              You may wanna register a new account through databmanager app.
+              ''')
