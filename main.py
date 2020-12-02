@@ -11,11 +11,13 @@ def argparse(): #here we collect the inputs, the results will be organized in ar
     parser.add_argument('-v','--verbosity',help='increase output verbosity', action='store_true')
     args = parser.parse_args()
     return args
-
-
-
+    
 if __name__ == "__main__":
     ''' Execute code only if the file was run directly.'''
+    if len (sys.argv)>3:
+        print("you put more than three arguments or omit the "" when specifying the artist and song title")
+    #the condition len(sys.arg)<3 is not needed, as the console autonomously gives an error if the number of arguments is less than 3 
+
     databmanager.open_and_create('database.db')
     args = parse_args()
     if databmanager.check_user(args.usr, args.psw):
