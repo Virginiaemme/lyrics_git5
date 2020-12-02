@@ -1,5 +1,5 @@
-from music_package import lyrics.py as ly
-from music_package import tabs.py as ta
+from music_package import lyrics as ly
+from music_package import tabs as ta
 import argparse
 import os
 import databmanager
@@ -17,9 +17,9 @@ def argparse(): #here we collect the inputs, the results will be organized in ar
 if __name__ == "__main__":
     ''' Execute code only if the file was run directly.'''
     databmanager.open_and_create('database.db')
-    args = parse_args()
+    args = argparse
     if databmanager.check_user(args.usr, args.psw):
-        ly.get_lyric(args.artist, args.title)
+        ly.get_lyric(args.artist, args.title, args.verbosity)
         ta.get_tabs_id (args.artist)
     else:
         print('''
