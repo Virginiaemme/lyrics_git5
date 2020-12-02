@@ -1,3 +1,6 @@
+import requests
+import json
+
 def get_tabs_id(artist):
 
     """ 
