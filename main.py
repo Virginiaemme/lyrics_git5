@@ -7,9 +7,24 @@ import sys
 
 def argparse(): #here we collect the inputs, the results will be organized in arrays and inserted in the url
     parser = argparse.ArgumentParser()
-    parser.add_argument("artist", help="add artist")
-    parser.add_argument("title", help="add title")
-    parser.add_argument('-v','--verbosity',help='increase output verbosity', action='store_true')
+    parser.add_argument(
+        "artist", 
+        help="add artist")
+    parser.add_argument(
+        "title", 
+        help="add title")
+    parser.add_argument(
+        '-v','--verbosity',
+        help='increase output verbosity', 
+        action='store_true')
+    parser.add_argument(
+        '-usr',
+        help="Write your username here",
+        required=True)
+    parser.add_argument(
+        '-psw',
+        help="Write your password here",
+        required=True)
     args = parser.parse_args()
     return args
     
