@@ -9,10 +9,10 @@ def argparse(): #here we collect the inputs, the results will be organized in ar
     parser = arg.ArgumentParser()
     parser.add_argument(
         "artist", 
-        help="add artist")
+        help="add artist between double quotes")
     parser.add_argument(
         "title", 
-        help="add title")
+        help="add title between double quotes")
     parser.add_argument(
         '-v','--verbosity',
         help='increase output verbosity', 
@@ -29,11 +29,9 @@ def argparse(): #here we collect the inputs, the results will be organized in ar
     return args
     
 if __name__ == "__main__":
+   
     ''' Execute code only if the file was run directly.'''
-    if len (sys.argv)>3:
-        print("you put more than three arguments or omitted the double quotes when specifying the artist and song title")
-    #the condition len(sys.arg)<3 is not needed, as the console autonomously gives an error if the number of arguments is less than 3 
-
+    
     databmanager.open_and_create('database.db')
     args = argparse()
     if databmanager.check_user(args.usr, args.psw):
