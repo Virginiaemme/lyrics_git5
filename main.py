@@ -35,8 +35,9 @@ if __name__ == "__main__":
     databmanager.open_and_create('database.db')
     args = argparse()
     if databmanager.check_user(args.usr, args.psw):
-        ly.get_lyric(args.artist, args.title, args.verbosity)
-        ta.get_tabs_id (args.artist)
+        song_lyrics = ly.get_lyric(args.artist, args.title, args.verbosity)
+        song_tabs = ta.get_tabs_id (args.artist)
+        print(song_lyrics, song_tabs)
     else:
         print('''
               Sorry, wrong username password selected!
