@@ -1,24 +1,15 @@
 #! /usr/bin/env python3
 '''
-Database Manager module is used to manage user database operations.
-dbmanager.py will enable you to:
-- add a new account with username and password
-- check if credentials inserted are present on the database
-- remove an account from the database
-The module is can be called directly to manage database or through the main file
- to check if the user is registered and allow the access.
-Example:
-    Adding a new user:
-        $ python databmanager.py -usr test -psw test -add
-            User [test] succesfully added to database!
-    Removing a user:
-        $ python databmanager.py -usr test -psw test -rm
-            Successfully removed user [test]
-    Checking credentials:
-        $ python databmanager.py -usr test -psw test -check
-            Credentials you have inserted for user [test] are the correct ones!
-    Level of verbosity is regulated through the optional argument of the parser
-.. 
+databmanager.py is a module that allows to manage user database operations.
+
+It will enable to:
+- create a new account with username and password 
+- check if the provided credentials are in the database
+- delete an account from the database
+
+The module can be called directly or through the main file in order to manage the database, 
+ check if the user is registered or not and allow the access.
+
 '''
 
 import sqlite3
@@ -30,12 +21,14 @@ from argparse import ArgumentParser
 conn = None
 cursor = None
 
-
 def open_and_create(database):
-    """Connect to the database or create a new one if it doesn't exist.
-    Parameters:
-        database (string): path to database
+
     """
+    This function allows to create a new database or to connect to an existing one.
+    Parameters are:
+        :database (string): path to database
+    """
+
     global conn
     global cursor
     conn = sqlite3.connect(database)
@@ -52,8 +45,10 @@ def open_and_create(database):
 
 
 def parse_args():
-    '''Command line option and argument parsing.
-    The function use argparse to write user-friendly command-line interfaces.
+
+    '''
+    Command line option and argument parsing.
+    The function uses argparse to write user-friendly command-line interfaces.
     The argparse module also automatically generates help and usage messages
     and issues errors when users give the program invalid arguments.
     Arguments:
@@ -69,7 +64,6 @@ def parse_args():
 
     parser = ArgumentParser(
         description="Managing of the users database",
-        prog="Eu",
         usage="%(prog)s [options]",
         epilog="Backend SQLite3")
     parser.add_argument(
@@ -108,13 +102,16 @@ def parse_args():
 
 
 def new_user(user, passw):
-    """Register a new user.
+
+    """
+    This function allows to register a new user.
     The SHA256, of salt plus password, is computed to obtain the digest.
-    Password can so be stored in secure manner in encrypted version.
-    Parameters:
+    In this way passwords can be stored in encrypted version to provide security.
+    Parameters are:
         user (string): user username
         passw (string): user password
     """
+
     global conn
     global cursor
     sale = str(random.randint(1, 10000))
@@ -135,14 +132,17 @@ def new_user(user, passw):
 
 
 def check_user(user, passw):
-    """Check if credentials are correct.
+    
+    """
+    Check if credentials are correct.
     If the user exists the SHA256 is computed. Than, if the digest of the
-    password provided by the user is the same as the digest computed as above,
+    password provided by the user corresponds to the digest computed above,
     the user is authenticated and allowed to use functionalities.
     Parameters:
         user (string): user username
         passw (string): user password
     """
+
     global conn
     global cursor
     cursor = conn.cursor()
@@ -152,8 +152,8 @@ def check_user(user, passw):
     conn.commit()
     if results == []:
         print('''
-              Sorry, wrong username password selected!
-              You may wanna register a new account through dbmanager app.
+              Sorry, the password is incorrect.
+              You may wanna register a new account through databmanager app.
               ''')
         quit()
     password = str(results[0][2]) + passw
@@ -164,24 +164,29 @@ def check_user(user, passw):
         return False
 
 
-def remove_user(user, passw):
-    """Remove an old user.
+def remove_user(user, psw):
+    """
+    Remove a user.
     Parameters:
         user (string): user username
-        passw (string): user password
+        psw (string): user password
     """
     global conn
     global cursor
-    if check_user(user, passw):
+    if check_user(user, psw):
         cursor.execute("DELETE FROM users WHERE username = ?", (user,))
         conn.commit()
-        print("Successfully removed user [{}]".format(args.usr))
+        print("The user [{}] has been successfully removed.".format(args.usr))
     else:
-        print("Sorry, wrong or invalid password selected!")
+        print("Sorry, the password provided is not correct. Try again.")
 
 
 if __name__ == "__main__":
-    ''' Execute code only if the file was run directly.'''
+
+    ''' 
+    Execute code only if the file was run directly.
+    '''
+
     open_and_create('database.db')
     args = parse_args()
     bool1 = args.add and args.rm
@@ -202,7 +207,7 @@ if __name__ == "__main__":
             print("Credentials for user [{}] are the correct ones!"
                   .format(args.usr))
         else:
-            print("Sorry, wrong or invalid password selected!")
+            print("Sorry, the password selected is wrong or invalid.")
     else:
         print("Please select one operation [-add], [-rm] or [-check]!")
         conn.close()
