@@ -3,6 +3,7 @@ from music_package import tabs as ta
 import argparse
 import os
 import databmanager
+import sys
 
 def argparse(): #here we collect the inputs, the results will be organized in arrays and inserted in the url
     parser = argparse.ArgumentParser()
