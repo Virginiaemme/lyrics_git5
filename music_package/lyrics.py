@@ -28,6 +28,6 @@ def get_lyric( artist, title, verbosity=True):
         pass
     
     if verbosity:
-        return ('The song {} is from the artist {} and the lyrics is: {}'.format(title, artist, song))
+        return ('The song {} is from the artist {} and the lyrics is:\n\n{}'.format(title, artist, song))
     else:
         return song

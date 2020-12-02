@@ -37,7 +37,7 @@ if __name__ == "__main__":
     if databmanager.check_user(args.usr, args.psw):
         song_lyrics = ly.get_lyric(args.artist, args.title, args.verbosity)
         song_tabs = ta.get_tabs_id (args.artist)
-        print(song_lyrics, song_tabs)
+        print(song_lyrics, '\n\n',song_tabs)
     else:
         print('''
               Sorry, wrong username password selected!
