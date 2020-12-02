@@ -1,9 +1,8 @@
 ## IMPLEMENTATION of a SONG LYRICS FETCHER :music:
 
 
-In this repository you can find a file named ```lyrics.py``` that queries the [lyrics.ovh](https://lyricsovh.docs.apiary.io/#) website to fetch the lyrics of a song. 
+In this repository you can find files named ```lyrics.py``` and ```tabs.py``` that query the [lyrics.ovh](https://lyricsovh.docs.apiary.io/#) website to fetch the lyrics of a song thanks the utter and, find the songs' tabs thanks the latter. 
 
-!!!(TO BE MENTIONED EVENTUAL FURTHER FUNCTIONALITIES)
 
 To do that the file ```lyrics.py``` implements the ```get_lyric( artist, title)``` function. 
 
@@ -40,6 +39,11 @@ The __init__.py files are required to make Python treat directories containing t
 ## SUPPORT
 
 ## AUTHORS AND ACKNOWLEDGEMNT
+[Matteo Bianco](https://github.com/Matteo-Cobian)
+[Stefano Businaro](https://github.com/businer)
+[Divincenzo Francesco](https://github.com/divi999)
+[Grego Federico](https://github.com/Fede2302)
+[Massaccesi Virginia](https://github.com/Virginiaemme)
 
 ## LICENSE
 [APACHE 2.0](https://choosealicense.com/licenses/apache-2.0/)
