@@ -20,7 +20,7 @@ if __name__ == "__main__":
     #the condition len(sys.arg)<3 is not needed, as the console autonomously gives an error if the number of arguments is less than 3 
 
     databmanager.open_and_create('database.db')
-    args = argparse
+    args = argparse()
     if databmanager.check_user(args.usr, args.psw):
         ly.get_lyric(args.artist, args.title, args.verbosity)
         ta.get_tabs_id (args.artist)
