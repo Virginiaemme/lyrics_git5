@@ -19,25 +19,25 @@ The following guidelines will help final users to understand the whole project b
 		main.py
 
 
-#### The package called ```music_package``` collect the following files:
+##### The package called ```music_package``` collects the following files:
 
 - ```lyrics.py``` that query the [lyrics.ovh](https://lyricsovh.docs.apiary.io/#) website to fetch the lyrics of a song. It implements ```get_lyric( artist, title)``` function.
 
-- ```tabs.py``` and [songsterr.com](http://www.songsterr.com/a/wa/song?id=) websites to fetch the songs' tabs. It implemnts ```get_tabs_id( artist)``` function.
+- ```tabs.py``` and [songsterr.com](http://www.songsterr.com/a/wa/song?id=) website to fetch the songs' tabs. It implemnts ```get_tabs_id( artist)``` function.
 
 - ```__init__.py``` file is required to make Python treat directories containing the file as packages: ignore it!
 
 - ```LICENSE.txt``` file contain the chosen license for GIT5 project.
 
-#### Other files in the repository:
+##### Other files in the repository:
 
 - ```.gitignore``` file specifies intentionally untracked files that git should ignore.
 
 - ```database.db``` file stores all usernames and encrypted passwords. Further information in the next section.
 
-- ```databmanager``` file
+- ```databmanager``` file 
 
-- ```main.py``` file
+- ```main.py``` file 
 
 
 
@@ -50,7 +50,7 @@ The following guidelines will help final users to understand the whole project b
 
 :warning: The project requires the following modules to run:
 
- :warning: ```JSON``` , ```requests```, ```argparse```, ```sys``` , ```CSV```, ```os```, ```random```, ```hashlib``` modules. 
+ ```JSON``` , ```requests```, ```argparse```, ```sys``` , ```CSV```, ```os```, ```random```, ```hashlib``` modules. 
 
 3. Use the command $ pip3 install libraryname to eventually install missing libraries.
 
@@ -66,7 +66,7 @@ The following guidelines will help final users to understand the whole project b
 
 		$ python databmanager.py -usr test -psw test -add/check/rm
 
-	:warning: only one operation at time is supported.
+	:warning: Only one operation at time is supported.
 
 #### How to:
 
@@ -92,16 +92,14 @@ All the users and their passwords are saved in the database.db file in the repos
 
 
 
+5. Execute the main file.
 
+		$ python main.py 	QUI MANCANO GLI ARGUMENTSSSSS GENERICI
 
-
-
-If you run the program, executing the main file with: ```python main.py``` it will give you results similar to the following: 
-
-CONTROLLARE QUESTO OUTPUT 
+E.g.
 
 ```
-$ Python main.py
+$ Python main.py QUI RIPORTA LE COSE DELL'ESEMPIO PRECISO
 Across the Universe by Beatles:
 Words are flowing out like 
 Endless rain into a paper cup
@@ -112,19 +110,19 @@ Possessing and caressing me.
 ...
 ```
 
-
-
 A user can choose, ```title``` ( **Across the Universe** in the example) by the specified ```artist``` (**Beatles** in the example) to get the lyrics as output.
 
 ** AUTHENTICATION **
 
-Descrizione divisione packages e moduli e aggiungerei anche 
-The __init__.py files are required to make Python treat directories containing the file as packages: ignore it!
+The user can now choose among any European capital or state in order to find its respective state or capital in a heartbeat. Using optional parameters he may also:
+
+QUI MANCA SOLO LA PARTE DEI PARAMETRI ED è CONCLUSO 
+
+E POI LA PARTE DEL CSV
 
 
 ## DOCUMENTATION
 Documentation is stored in the repository documentation. Please have a look to understand the functions of our modules better.
-
 
 
 ## TESTING
