@@ -19,7 +19,7 @@ The following guidelines will help final users to understand the whole project b
 		main.py
 
 
-####The package called ```music_package``` collect the following files:
+#### The package called ```music_package``` collect the following files:
 
 - ```lyrics.py``` that query the [lyrics.ovh](https://lyricsovh.docs.apiary.io/#) website to fetch the lyrics of a song. It implements ```get_lyric( artist, title)``` function.
 
@@ -29,7 +29,7 @@ The following guidelines will help final users to understand the whole project b
 
 - ```LICENSE.txt``` file contain the chosen license for GIT5 project.
 
-####Other files in the repository:
+#### Other files in the repository:
 
 - ```.gitignore``` file specifies intentionally untracked files that git should ignore.
 
