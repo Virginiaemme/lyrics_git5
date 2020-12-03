@@ -1,4 +1,4 @@
-#! /usr/bin/env python3
+s#! /usr/bin/env python3
 '''
 databmanager.py is a module that allows to manage user database operations.
 
@@ -128,7 +128,7 @@ def new_user(user, passw):
         cursor.execute("INSERT OR REPLACE INTO users VALUES (?,?,?)",
                        (user, digest, sale))
         conn.commit()
-        print("User [{}] succesfully added to database!".format(user))
+        print("User [{}] added to database!".format(user))
 
 
 def check_user(user, passw):
@@ -176,7 +176,7 @@ def remove_user(user, psw):
     if check_user(user, psw):
         cursor.execute("DELETE FROM users WHERE username = ?", (user,))
         conn.commit()
-        print("The user [{}] has been successfully removed.".format(args.usr))
+        print("The user [{}] has been removed.".format(args.usr))
     else:
         print("Sorry, the password provided is not correct. Try again.")
 
