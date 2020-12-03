@@ -2,19 +2,48 @@
 
 Our project aims to grant users access to songs' lyrics and tabs through this simple tool that we created. 
 
-## GETTING STARTED
+### GETTING STARTED
 The following guidelines will help final users to understand the whole project better and, of course, get a copy of our project and run it on their local machine for development and testing purposes.
 
 
-## BEFORE STARTING: PREREQUISITES
+### BEFORE STARTING: PREREQUISITES
 
 1. Download of the repository from Git-hub [GIT5](https://github.com/Matteo-Cobian/lyrics_git5)
 
 2. Check if all the needed libraries are installed.
-The libraries contain built-in modules that provide access to system functionality and modules written in Python that provide standardized solutions for many problems that occur in everyday programming.
 
-:warning: The project requires the following modules to run:
-- ```JSON``` , ```requests```, ```argparse```, ```sys``` , ```CSV``` modules. 
+		:warning: The project requires the following modules to run:
+-		 ```JSON``` , ```requests```, ```argparse```, ```sys``` , ```CSV``` modules. 
+
+3. Use the command $ pip3 install libraryname to eventually install missing libraries.
+
+
+
+
+		The system support a User Management System and so, you are going to need a valid username and password to login every time you execute the program.
+
+### HANDS ON: POPULATE THE DB
+
+4. Setup usernames and passwords, by executing databmanager.py from the command line.
+
+		$ python databmanager.py -usr test -psw test -add/check/rm
+
+
+	In order to add a new user
+
+		$ python databmanager.py -usr test -psw test -add
+
+User [test] succesfully added to database!
+CHECK an existing user
+
+		$ python databmanager.py -usr test -psw test -check
+
+Credentials for user [test] are the correct ones!
+REMOVE an old user
+
+		$ python databmanager.py -usr test -psw test -rm
+
+Successfully removed user [test]
 
 CONTROLLARE SE ABBIAMO AGGIUNTO TUTTI I MODULI 
 
@@ -69,15 +98,19 @@ Documentation is stored in the repository documentation. Please have a look to u
 
 ## AUTHORS AND ACKNOWLEDGMENT
 
-	- [Matteo Bianco](https://github.com/Matteo-Cobian)
+- [Matteo Bianco](https://github.com/Matteo-Cobian)
 
-	- [Stefano Businaro](https://github.com/businer)
 
-	- [Divincenzo Francesco](https://github.com/divi999)
+- [Stefano Businaro](https://github.com/businer)
 
-	- [Grego Federico](https://github.com/Fede2302)
 
-	- [Virginia Massaccesi](https://github.com/Virginiaemme)
+- [Divincenzo Francesco](https://github.com/divi999)
+
+
+- [Grego Federico](https://github.com/Fede2302)
+
+
+- [Virginia Massaccesi](https://github.com/Virginiaemme)
 
 
 
