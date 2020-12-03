@@ -12,7 +12,9 @@ The following guidelines will help final users to understand the whole project b
 
 2. Check if all the needed libraries are installed.
 
-		:warning: The project requires the following modules to run:
+
+:warning: The project requires the following modules to run:
+
 -		 ```JSON``` , ```requests```, ```argparse```, ```sys``` , ```CSV``` modules. 
 
 3. Use the command $ pip3 install libraryname to eventually install missing libraries.
@@ -28,26 +30,38 @@ The following guidelines will help final users to understand the whole project b
 
 		$ python databmanager.py -usr test -psw test -add/check/rm
 
+	:warning: only one operation at time is supported.
 
-	In order to add a new user
+#### How to:
+
+- ADD a new user
 
 		$ python databmanager.py -usr test -psw test -add
+			User [test] added to database!	
+	
 
-User [test] succesfully added to database!
-CHECK an existing user
+- CHECK an existing user's credentials
 
 		$ python databmanager.py -usr test -psw test -check
+			Credentials for user [test] are the correct ones!
 
-Credentials for user [test] are the correct ones!
-REMOVE an old user
+
+- REMOVE an old user
 
 		$ python databmanager.py -usr test -psw test -rm
+			The user [{}] has been removed.
 
-Successfully removed user [test]
+
+All the users and their passwords are saved in database.db file in the repository. 
+
+Passwords are stored as digests, computed with a salt plus hash repetition for improved security.
+
+
+
 
 CONTROLLARE SE ABBIAMO AGGIUNTO TUTTI I MODULI 
 
-[In this repository you can find files named ```lyrics.py``` and ```tabs.py``` that query the [lyrics.ovh](https://lyricsovh.docs.apiary.io/#) and [songsterr.com](https://www.songsterr.com) websites to fetch the lyrics of a song thanks to the utter and, find the songs' tabs thanks to the latter. 
+[In this repository you can find files named ```lyrics.py``` and ```tabs.py``` that query the [lyrics.ovh](https://lyricsovh.docs.apiary.io/#) and [songsterr.com](http://www.songsterr.com/a/wa/song?id=) websites to fetch the lyrics of a song thanks to the utter and, find the songs' tabs thanks to the latter. 
 
 
 The file ```lyrics.py``` implements the ```get_lyric( artist, title)``` function.
@@ -111,6 +125,9 @@ Documentation is stored in the repository documentation. Please have a look to u
 
 
 - [Virginia Massaccesi](https://github.com/Virginiaemme)
+
+
+Also thanks to Prof. Pistellato and Prof. Maccari for their contribution.
 
 
 
