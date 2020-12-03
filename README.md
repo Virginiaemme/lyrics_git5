@@ -5,6 +5,41 @@ Our project aims to grant users access to songs' lyrics and tabs through this si
 ### GETTING STARTED
 The following guidelines will help final users to understand the whole project better and, of course, get a copy of our project and run it on their local machine for development and testing purposes.
 
+### Repository structure
+
+		music_package
+						LICENSE.txt
+						__init__.py
+						lyrics.py
+						tabs.py
+		.gitignore
+		README.rm
+		database.db
+		databmanager.py
+		main.py
+
+
+#####The package called ```music_package``` collect the following files:
+
+- ```lyrics.py``` that query the [lyrics.ovh](https://lyricsovh.docs.apiary.io/#) website to fetch the lyrics of a song. It implements ```get_lyric( artist, title)``` function.
+
+- ```tabs.py``` and [songsterr.com](http://www.songsterr.com/a/wa/song?id=) websites to fetch the songs' tabs. It implemnts ```get_tabs_id( artist)``` function.
+
+- ```__init__.py``` file is required to make Python treat directories containing the file as packages: ignore it!
+
+- ```LICENSE.txt``` file contain the chosen licence for GIT5 project.
+
+#####Other files in the repository:
+
+- ```.gitignore``` file specifies intentionally untracked files that git should ignore.
+
+- ```databese.db``` file store all username and encrypted passwords. Further information in the next section.
+
+- ```databmanager``` file
+
+- ```main.py``` file
+
+
 
 ### BEFORE STARTING: PREREQUISITES
 
@@ -15,7 +50,7 @@ The following guidelines will help final users to understand the whole project b
 
 :warning: The project requires the following modules to run:
 
--		 ```JSON``` , ```requests```, ```argparse```, ```sys``` , ```CSV``` modules. 
+-		 ```JSON``` , ```requests```, ```argparse```, ```sys``` , ```CSV```, ```os```, ```random```, ```hashlib``` modules. 
 
 3. Use the command $ pip3 install libraryname to eventually install missing libraries.
 
@@ -52,25 +87,11 @@ The following guidelines will help final users to understand the whole project b
 			The user [{}] has been removed.
 
 
-All the users and their passwords are saved in database.db file in the repository. 
-
-Passwords are stored as digests, computed with a salt plus hash repetition for improved security.
+All the users and their passwords are saved in the database.db file in the repository. The file is now empty. As soon as users add new usernames and passwords, they will be stored in there. For security reasons, it will not be possible to read passwords straightforward: they are stored as digest computed with a salt plus hash repetition.
 
 
 
 
-CONTROLLARE SE ABBIAMO AGGIUNTO TUTTI I MODULI 
-
-[In this repository you can find files named ```lyrics.py``` and ```tabs.py``` that query the [lyrics.ovh](https://lyricsovh.docs.apiary.io/#) and [songsterr.com](http://www.songsterr.com/a/wa/song?id=) websites to fetch the lyrics of a song thanks to the utter and, find the songs' tabs thanks to the latter. 
-
-
-The file ```lyrics.py``` implements the ```get_lyric( artist, title)``` function.
-
-descrizione della funzione.
-
-The file ```tabs.py``` implements the ```get_tabs_id( artist)``` function.
-
-Descrizione funzione 
 
 
 
