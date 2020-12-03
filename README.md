@@ -94,12 +94,14 @@ All the users and their passwords are saved in the database.db file in the repos
 
 5. Execute the main file.
 
-		$ python main.py 	QUI MANCANO GLI ARGUMENTSSSSS GENERICI
+		$ python main.py "Title" "Artist" -usr *USERNAME* -psw *PASSWORD* -arguments*
+
+:warning: Inputs must be written using double quotes " ".  
 
 E.g.
 
 ```
-$ Python main.py QUI RIPORTA LE COSE DELL'ESEMPIO PRECISO
+$ Python main.py "Across the Universe" "Beatles" -usr *USERNAME* -psw *PASSWORD*
 Across the Universe by Beatles:
 Words are flowing out like 
 Endless rain into a paper cup
@@ -110,11 +112,31 @@ Possessing and caressing me.
 ...
 ```
 
-A user can choose, ```title``` ( **Across the Universe** in the example) by the specified ```artist``` (**Beatles** in the example) to get the lyrics as output.
+COTROLLARE OUTPUT
 
-** AUTHENTICATION **
+User can choose, ```title``` ( **Across the Universe** in the example) by the specified ```artist``` (**Beatles** in the example) to get the lyrics as output. E
 
-The user can now choose among any European capital or state in order to find its respective state or capital in a heartbeat. Using optional parameters he may also:
+#### ARGUMENTS*
+
+6. Chose the right arguments
+
+In the command line the user must add some mandatory arguments to be able to use run the main script. 
+
+These are :
+
+"Title" "Author" : Insert them using double quotes " "
+-usr : Insert username of the account
+-psw: Insert password of the account
+
+:warning: authentication is mandatory everytime users run the script.
+
+
+Moreover it is also possible to add some optional arguments:
+
+'-v','--verbosity' : increase output verbosity
+-h : show the help message
+--version: show infos about the project.
+
 
 QUI MANCA SOLO LA PARTE DEI PARAMETRI ED è CONCLUSO 
 
@@ -126,6 +148,8 @@ Documentation is stored in the repository documentation. Please have a look to u
 
 
 ## TESTING
+
+
 
 ## SUPPORT
 
