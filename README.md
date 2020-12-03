@@ -19,7 +19,7 @@ The following guidelines will help final users to understand the whole project b
 		main.py
 
 
-#####The package called ```music_package``` collect the following files:
+####The package called ```music_package``` collect the following files:
 
 - ```lyrics.py``` that query the [lyrics.ovh](https://lyricsovh.docs.apiary.io/#) website to fetch the lyrics of a song. It implements ```get_lyric( artist, title)``` function.
 
@@ -27,13 +27,13 @@ The following guidelines will help final users to understand the whole project b
 
 - ```__init__.py``` file is required to make Python treat directories containing the file as packages: ignore it!
 
-- ```LICENSE.txt``` file contain the chosen licence for GIT5 project.
+- ```LICENSE.txt``` file contain the chosen license for GIT5 project.
 
-#####Other files in the repository:
+####Other files in the repository:
 
 - ```.gitignore``` file specifies intentionally untracked files that git should ignore.
 
-- ```databese.db``` file store all username and encrypted passwords. Further information in the next section.
+- ```database.db``` file stores all usernames and encrypted passwords. Further information in the next section.
 
 - ```databmanager``` file
 
@@ -50,14 +50,15 @@ The following guidelines will help final users to understand the whole project b
 
 :warning: The project requires the following modules to run:
 
--		 ```JSON``` , ```requests```, ```argparse```, ```sys``` , ```CSV```, ```os```, ```random```, ```hashlib``` modules. 
+ :warning: ```JSON``` , ```requests```, ```argparse```, ```sys``` , ```CSV```, ```os```, ```random```, ```hashlib``` modules. 
 
 3. Use the command $ pip3 install libraryname to eventually install missing libraries.
 
 
 
 
-		The system support a User Management System and so, you are going to need a valid username and password to login every time you execute the program.
+	The system support a User Management System and so, you are going to need a valid username and password to login every time you execute the program.
+
 
 ### HANDS ON: POPULATE THE DB
 
@@ -130,6 +131,7 @@ Documentation is stored in the repository documentation. Please have a look to u
 
 ## SUPPORT
 
+Do not hesitate if you need any support!
 
 ## AUTHORS AND ACKNOWLEDGMENT
 
