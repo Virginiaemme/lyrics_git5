@@ -95,7 +95,7 @@ def parse_args():
     parser.add_argument(
         "--version",
         action="version",
-        version="%(prog)s v1.0, Dec 2019 by MFGAsoftware©")
+        version="%(prog)s v1.0, Nov 2020 by NOISIAMOVELOCITAsoftware©")
 
     arguments = parser.parse_args()
     return arguments
