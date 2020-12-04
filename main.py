@@ -5,39 +5,52 @@ import os
 import databmanager
 import sys
 
-def argparse(): #here we collect the inputs, the results will be organized in arrays and inserted in the url
+def argparse(): 
+
+    ''' 
+
+    The inputs are collected and parsed, 
+    then the results will be organized in arrays to be inserted in the URL
+
+    '''
+
     parser = arg.ArgumentParser()
     parser.add_argument(
         "artist", 
-        help="add artist between double quotes")
+        help = "add artist between double quotes")
     parser.add_argument(
         "title", 
-        help="add title between double quotes")
+        help = "add title between double quotes")
     parser.add_argument(
         '-v','--verbosity',
-        help='increase output verbosity', 
-        action='store_true')
+        help = 'increase output verbosity', 
+        action = 'store_true')
     parser.add_argument(
         '-usr',
-        help="Write your username here",
-        required=True)
+        help = "Write your username here",
+        required = True)
     parser.add_argument(
         '-psw',
-        help="Write your password here",
-        required=True)
+        help = "Write your password here",
+        required = True)
     args = parser.parse_args()
     return args
     
 if __name__ == "__main__":
    
-    ''' Execute code only if the file was run directly.'''
+    ''' Execute code only if the file was run directly '''
     
     databmanager.open_and_create('database.db')
     args = argparse()
+
     if databmanager.check_user(args.usr, args.psw):
+
+        ''' If the user has correctly logged in, run the program '''
+
         song_lyrics = ly.get_lyric(args.artist, args.title, args.verbosity)
         song_tabs = ta.get_tabs_id (args.artist)
         print(song_lyrics, '\n\n',song_tabs)
+    
     else:
         print('''
               Sorry, wrong username password selected!
