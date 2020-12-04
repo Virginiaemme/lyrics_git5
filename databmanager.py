@@ -1,4 +1,4 @@
-s#! /usr/bin/env python3
+#! /usr/bin/env python3
 '''
 databmanager.py is a module that allows to manage user database operations.
 
