@@ -122,7 +122,7 @@ Possessing and caressing me.
 
 
 User can choose, ```title``` ( **Across the Universe** in the example) by the specified ```artist``` (**Beatles** in the example) to get the lyrics and tabs codes of all the song of the artist as output. 
-In order to have acess to the tabs copy paste this link into your browsware http://www.songsterr.com/a/wa/song?id= and add the code that you can find in the output.
+In order to have acess to the tabs copy paste this link into your browsware http://www.songsterr.com/a/wa/song?id= and add the code that  is diplayed in the output.
 
 
 E.g.
@@ -140,7 +140,7 @@ Copypasting the link + 79 (http://www.songsterr.com/a/wa/song?id=79) the user wi
 
 In the command line the user must add some mandatory arguments to be able to use run the main script. 
 
-These are :
+**These are :** 
 
 "Author" "Title"  : Insert them using double quotes " "
 
@@ -151,7 +151,7 @@ These are :
 :warning: authentication is mandatory everytime users run the script.
 
 
-Moreover it is also possible to add some optional arguments:
+**Moreover it is also possible to add some optional arguments:** 
 
 '-v','--verbosity' : increase output verbosity
 -h : show the help message
