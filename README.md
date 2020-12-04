@@ -94,27 +94,45 @@ All the users and their passwords are saved in the database.db file in the repos
 
 5. Execute the main file.
 
-		$ python main.py "Title" "Artist" -usr *USERNAME* -psw *PASSWORD* -arguments*
+		$ python main.py "Artist" "Title" -usr *USERNAME* -psw *PASSWORD* -arguments*
 
-:warning: Inputs must be written using double quotes " ".  
+:warning: Inputs must be written using double quotes " ".   
 
 E.g.
 
 ```
-$ Python main.py "Across the Universe" "Beatles" -usr *USERNAME* -psw *PASSWORD*
-Across the Universe by Beatles:
+$ Python main.py "Beatles" "Across the Universe"  -usr *USERNAME* -psw *PASSWORD* -v
+The song Across the Universe is from the artist Beatles and the lyrics is:
+
 Words are flowing out like 
 Endless rain into a paper cup
 They slither wildly as they slip away across the universe.
 Pools of sorrow waves of joy
 Are drifting through my opened mind
 Possessing and caressing me.
+
+.... **Lyrics** ....
+
+ ('To get the tabs of the song insert the ID of the song in this link:  http://www.songsterr.com/a/wa/song?id=   ', [{'id': 57, 'type': 'Song', 'title': 'Blackbird', 'artist': {'id': 19, 'type': 'Artist', 'nameWithoutThePrefix': 'Beatles', 'useThePrefix': True, 'name': 'The Beatles'}, 'chordsPresent': True, 'tabTypes': ['PLAYER', 'TEXT_GUITAR_TAB', 'CHORDS']}, {'id': 2900, 'type': 'Song', 'title': "Octopus's Garden", 'artist': {'id': 19, 'type': 'Artist', 'nameWithoutThePrefix': 'Beatles', 'useThePrefix': True, 'name': 'The Beatles'}, 'chordsPresent': True, 'tabTypes': ['PLAYER', 'TEXT_GUITAR_TAB', 'CHORDS', 'TEXT_BASS_TAB']}, {'id': 59, 'type': 'Song', 'title': 'Girl', 'artist': {'id': 19, 'type': 'Artist', 'nameWithoutThePrefix': 'Beatles', 'useThePrefix': True, 'name': 'The Beatles'}, 'chordsPresent': True, 'tabTypes': ['PLAYER', 'TEXT_GUITAR_TAB', 'CHORDS', 'TEXT_BASS_TAB']}, {'id': 79, 'type': 'Song', 'title': 'Let It Be', 'artist': {'id': 19, 'type': 'Artist', 'nameWithoutThePrefix': 'Beatles', 'useThePrefix': True, 'name': 'The Beatles'}, 'chordsPresent': True, 'tabTypes': ['PLAYER', 'TEXT_GUITAR_TAB', 'CHORDS', 'TEXT_BASS_TAB']},
+
+ .... **Other songs and tabs codes** ....
 ...
 ```
 
-COTROLLARE OUTPUT
 
-User can choose, ```title``` ( **Across the Universe** in the example) by the specified ```artist``` (**Beatles** in the example) to get the lyrics as output. E
+
+User can choose, ```title``` ( **Across the Universe** in the example) by the specified ```artist``` (**Beatles** in the example) to get the lyrics and tabs codes of all the song of the artist as output. 
+In order to have acess to the tabs copy paste this link into your browsware http://www.songsterr.com/a/wa/song?id= and add the code that you can find in the output.
+
+
+E.g.
+
+
+'id': 79, 'type': 'Song', 'title': 'Let It Be'
+
+
+Copypasting the link + 79 (http://www.songsterr.com/a/wa/song?id=79) the user will see the tabs.
+
 
 #### ARGUMENTS*
 
@@ -124,8 +142,10 @@ In the command line the user must add some mandatory arguments to be able to use
 
 These are :
 
-"Title" "Author" : Insert them using double quotes " "
+"Author" "Title"  : Insert them using double quotes " "
+
 -usr : Insert username of the account
+
 -psw: Insert password of the account
 
 :warning: authentication is mandatory everytime users run the script.
