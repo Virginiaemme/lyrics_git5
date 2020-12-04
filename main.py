@@ -4,6 +4,8 @@ import argparse as arg
 import os
 import databmanager
 import sys
+import h_manager as hm
+import csv
 
 def argparse(): 
     ''' The inputs are collected and parsed, 
@@ -51,6 +53,12 @@ if __name__ == "__main__":
     databmanager.open_and_create('database.db')
     args = argparse()
     if databmanager.check_user(args.usr, args.psw):
+        #creating a dictionary
+        dic={'artist':args.artist, 'song':args.title, 'username':args.usr}
+        #creating the keys of the dictionary
+        fieldname= ['artist', 'song','username']
+        #appending the file to our csv
+        hm.append_dict_as_row(history.csv, dic,fieldname)
         song_lyrics = ly.get_lyric(args.artist, args.title, args.verbosity)
         song_tabs = ta.get_tabs_id (args.artist)
         print(song_lyrics, '\n\n',song_tabs)  
