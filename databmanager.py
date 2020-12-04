@@ -1,15 +1,10 @@
 #! /usr/bin/env python3
-'''
-databmanager.py is a module that allows to manage user database operations.
-
-It will enable to:
-- create a new account with username and password 
-- check if the provided credentials are in the database
-- delete an account from the database
-
+''' databmanager.py is a module that allows to manage user database operations.
+It will enable to: (1) create a new account with username and password, 
+(2) check if the provided credentials are in the database, and
+(3) delete an account from the database
 The module can be called directly or through the main file in order to manage the database, 
- check if the user is registered or not and allow the access.
-
+check if the user is registered or not and allow the access.
 '''
 
 import sqlite3
@@ -22,13 +17,11 @@ conn = None
 cursor = None
 
 def open_and_create(database):
+    """ This function allows to create a new database or to connect to an existing one.
 
+    :param database: path to database
+    :type database: string
     """
-    This function allows to create a new database or to connect to an existing one.
-    Parameters are:
-        :database (string): path to database
-    """
-
     global conn
     global cursor
     conn = sqlite3.connect(database)
@@ -45,9 +38,7 @@ def open_and_create(database):
 
 
 def parse_args():
-
-    '''
-    Command line option and argument parsing.
+    '''Command line option and argument parsing.
     The function uses argparse to write user-friendly command-line interfaces.
     The argparse module also automatically generates help and usage messages
     and issues errors when users give the program invalid arguments.
@@ -58,8 +49,9 @@ def parse_args():
         ["-rm"]: remove a user
         ["-check"]: check a user
         ["--version"] (optional): show infos about the project
-    Returns:
-        argparse (namespace): user shell inputs arguments
+    
+    :return: user shell inputs arguments
+    :rtype: namespace
     '''
 
     parser = ArgumentParser(
@@ -102,16 +94,15 @@ def parse_args():
 
 
 def new_user(user, passw):
-
-    """
-    This function allows to register a new user.
+    """ This function allows to register a new user.
     The SHA256, of salt plus password, is computed to obtain the digest.
     In this way passwords can be stored in encrypted version to provide security.
-    Parameters are:
-        user (string): user username
-        passw (string): user password
-    """
 
+    :param user: user username
+    :type user: string
+    :param passw: user password
+    :type passw: string
+    """
     global conn
     global cursor
     sale = str(random.randint(1, 10000))
@@ -132,17 +123,18 @@ def new_user(user, passw):
 
 
 def check_user(user, passw):
-    
-    """
-    Check if credentials are correct.
+    """ Check if credentials are correct.
     If the user exists the SHA256 is computed. Than, if the digest of the
     password provided by the user corresponds to the digest computed above,
     the user is authenticated and allowed to use functionalities.
-    Parameters:
-        user (string): user username
-        passw (string): user password
-    """
 
+    :param user: user username
+    :type user: string
+    :param passw: user password
+    :type passw: string
+    :return: `True` if log in was successful, `False` otherwise
+    :rtype: bool
+    """
     global conn
     global cursor
     cursor = conn.cursor()
@@ -165,11 +157,12 @@ def check_user(user, passw):
 
 
 def remove_user(user, psw):
-    """
-    Remove a user.
-    Parameters:
-        user (string): user username
-        psw (string): user password
+    """ Remove a user.
+
+    :param user: user username
+    :type user: string
+    :param passw: user password
+    :type passw: string
     """
     global conn
     global cursor
@@ -182,11 +175,8 @@ def remove_user(user, psw):
 
 
 if __name__ == "__main__":
-
-    ''' 
-    Execute code only if the file was run directly.
+    ''' Execute code only if the file was run directly.
     '''
-
     open_and_create('database.db')
     args = parse_args()
     bool1 = args.add and args.rm
