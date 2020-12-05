@@ -16,7 +16,10 @@ The following guidelines will help final users to understand the whole project b
 		README.rm
 		database.db
 		databmanager.py
+		h_manager.py
+		history.csv
 		main.py
+
 
 
 ##### The package called ```music_package``` collects the following files:
@@ -33,11 +36,15 @@ The following guidelines will help final users to understand the whole project b
 
 - ```.gitignore``` file specifies intentionally untracked files that git should ignore.
 
-- ```database.db``` file stores all usernames and encrypted passwords. Further information in the next section.
+- ```database.db``` file stores all encripted usernames and encrypted passwords. Further information in the next section.
 
-- ```databmanager``` file 
+- ```databmanager``` file that allows to manage user database operations. It enable to create, check and remove accounts.
 
-- ```main.py``` file 
+- ```h_manager``` file that allows to add user researches into a csv file.
+
+- ```history.csv``` csv file that contains records of all the user's tracks.
+
+- ```main.py``` file that gathers all the function neatly and permits to execute the project aim.
 
 
 
@@ -154,7 +161,9 @@ In the command line the user must add some mandatory arguments to be able to use
 **Moreover it is also possible to add some optional arguments:** 
 
 '-v','--verbosity' : increase output verbosity
+
 -h : show the help message
+
 --version: show infos about the project.
 
 
@@ -198,5 +207,3 @@ Also thanks to Prof. Pistellato and Prof. Maccari for their contribution.
 
 ## LICENSE
 [APACHE 2.0](https://choosealicense.com/licenses/apache-2.0/)
-
-
