@@ -27,7 +27,7 @@ def argparse():
         help = "add title between double quotes")
     parser.add_argument(
         '-v','--verbosity',
-        help = 'increase output verbosity', 
+        help = 'increase output fbosity', 
         action = 'store_true')
     parser.add_argument(
         '-usr',
@@ -62,8 +62,14 @@ if __name__ == "__main__":
         #appending the file to our csv
         hm.append_dict_as_row('history.csv', dic, fieldn)
         song_lyrics = ly.get_lyric(args.artist, args.title, args.verbosity)
+<<<<<<< HEAD
+        song_tabs = ta.get_tabs_id (args.artist, args.verbosity)
+        print(song_lyrics, '\n\n',song_tabs)
+    
+=======
         song_tabs = ta.get_tabs_id (args.artist)
         print(song_lyrics, '\n\n',song_tabs)  
+>>>>>>> b9b269dd18c5c15228bf0f629fa05ab77a82b5b1
     else:
         print('''
               Sorry, wrong username password selected!
