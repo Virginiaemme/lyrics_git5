@@ -4,20 +4,22 @@ import argparse as arg
 import os
 import databmanager
 import sys
-import h_manager as hm
-import csv
-import pandas as pd
 
 def argparse(): 
-    ''' The inputs are collected and parsed, 
+
+    ''' 
+    The inputs are collected and parsed, 
     then the results will be organized in arrays to be inserted in the URL.
     Arguments:
+
         ["-artist"]: insert the name of the artist
         ["-title"]: insert the title of the song you are looking for
         ["-v"]: add verbosity
         ["-usr"]: insert user name
         ["-psw"]: insert user password
+
     '''
+
     parser = arg.ArgumentParser()
     parser.add_argument(
         "artist", 
@@ -41,7 +43,9 @@ def argparse():
     return args
     
 if __name__ == "__main__":
-    ''' Execute code only if the file was run directly.
+   
+    ''' 
+    Execute code only if the file was run directly.
     If the user has correctly logged in, run the program.
         
     :param song_lyrics: lyrics of the song
@@ -50,9 +54,12 @@ if __name__ == "__main__":
     :type song_tabs: list
     :return: the lyrics of the song and the list of the artist's songs where to search the needed ID for getting the tabs
     :rtype: string, list
+
     '''
+
     databmanager.open_and_create('database.db')
     args = argparse()
+
     if databmanager.check_user(args.usr, args.psw):
         df = pd.read_csv('history.csv')
         #creating a dictionary
@@ -62,16 +69,8 @@ if __name__ == "__main__":
         #appending the file to our csv
         hm.append_dict_as_row('history.csv', dic, fieldn)
         song_lyrics = ly.get_lyric(args.artist, args.title, args.verbosity)
-<<<<<<< HEAD
         song_tabs = ta.get_tabs_id (args.artist, args.verbosity)
         print(song_lyrics, '\n\n',song_tabs)
     
-=======
-        song_tabs = ta.get_tabs_id (args.artist)
-        print(song_lyrics, '\n\n',song_tabs)  
->>>>>>> b9b269dd18c5c15228bf0f629fa05ab77a82b5b1
     else:
-        print('''
-              Sorry, wrong username password selected!
-              You may wanna register a new account through databmanager app.
-              ''')
+        print("Sorry, wrong username password selected!You may wanna register a new account through databmanager app.")
