@@ -24,8 +24,9 @@ def get_lyric( artist, title, verbosity=True):
     try:
         song = data['lyrics']
     except TypeError:
-        pass   
+        pass  
+    extend_output = 'The song {} is from the artist {} and the lyrics is:\n\n{}'.format(title, artist, song) 
     if verbosity:
-        return ('The song {} is from the artist {} and the lyrics is:\n\n{}'.format(title, artist, song))
+        return extend_output
     else:
         return song
