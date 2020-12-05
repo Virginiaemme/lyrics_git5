@@ -3,7 +3,7 @@ import json
 
 def get_tabs_id(artist, verbosity=True):
 
-     """ 
+    """ 
 
      The function returns the guitar tabs of a song.
 
