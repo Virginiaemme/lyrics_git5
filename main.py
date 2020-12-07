@@ -26,14 +26,14 @@ def argparse():
 
     parser = arg.ArgumentParser()
     parser.add_argument(
-        "artist",
+        "artist", type = str,
         help="add artist between double quotes")
     parser.add_argument(
-        "title",
+        "title", type = str,
         help="add title between double quotes")
     parser.add_argument(
         '-v', '--verbosity',
-        help='increase output fbosity',
+        help='increase output verbosity',
         action='store_true')
     parser.add_argument(
         '-usr',
