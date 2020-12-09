@@ -21,7 +21,7 @@ class TestInput(unittest.TestCase):
     # invalid inputs
     def test_wrong_values(self):
         # you should input wrong data
-        self.assertEqual(ly.get_lyric(dictionary,dictionary), None)
+        self.assertEqual(ly.get_lyric(1,1), "")
 
         # NOTE: the following test passing an empty list will fail!
         # self.assertEqual(return_birthday([]), None)
