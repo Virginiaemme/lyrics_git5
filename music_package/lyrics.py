@@ -1,7 +1,7 @@
 import requests
 import json
 
-def get_lyric( artist, title, verbosity=True):
+def get_lyric( artist, title, verbosity=False):
     """The function returns the lyrics of a song given the title and the artist.
     
     :param artist: artist name
