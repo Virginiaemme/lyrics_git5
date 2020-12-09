@@ -1,10 +1,10 @@
 #! /usr/bin/env python3
 ''' databmanager.py is a module that allows to manage user database operations.
-It will enable to: (1) create a new account with username and password, 
+It will enable to: (1) create a new account with username and password,
 (2) check if the provided credentials are in the database, and
 (3) delete an account from the database
-The module can be called directly or through the main file in order to manage the database, 
-check if the user is registered or not and allow the access.
+The module can be called directly or through the main file in order to manage
+the database, check if the user is registered or not and allow the access.
 '''
 
 import sqlite3
@@ -16,9 +16,11 @@ from argparse import ArgumentParser
 conn = None
 cursor = None
 
-def open_and_create(database):
-    """ This function allows to create a new database or to connect to an existing one.
 
+def open_and_create(database):
+
+    """ This function allows to create a new database or to connect to an
+    existing one.
     :param database: path to database
     :type database: string
     """
@@ -49,7 +51,7 @@ def parse_args():
         ["-rm"]: remove a user
         ["-check"]: check a user
         ["--version"] (optional): show infos about the project
-    
+
     :return: user shell inputs arguments
     :rtype: namespace
     '''
@@ -96,8 +98,8 @@ def parse_args():
 def new_user(user, passw):
     """ This function allows to register a new user.
     The SHA256, of salt plus password, is computed to obtain the digest.
-    In this way passwords can be stored in encrypted version to provide security.
-
+    In this way passwords can be stored in encrypted version to provide
+    security.
     :param user: user username
     :type user: string
     :param passw: user password
@@ -127,7 +129,6 @@ def check_user(user, passw):
     If the user exists the SHA256 is computed. Than, if the digest of the
     password provided by the user corresponds to the digest computed above,
     the user is authenticated and allowed to use functionalities.
-
     :param user: user username
     :type user: string
     :param passw: user password
@@ -158,7 +159,6 @@ def check_user(user, passw):
 
 def remove_user(user, psw):
     """ Remove a user.
-
     :param user: user username
     :type user: string
     :param passw: user password
