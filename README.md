@@ -1,4 +1,4 @@
-## GIT5: SONG LYRICS and TABS FETCHER PROJECT
+## GIT5: SONG LYRICS and TABS FETCHER PROJECT 
 
 Our project aims to grant users access to songs' lyrics and tabs through this simple tool that we created. 
 
@@ -12,6 +12,9 @@ The following guidelines will help final users to understand the whole project b
 						__init__.py
 						lyrics.py
 						tabs.py
+						test			
+									__init__.py
+									test_module.py
 		.gitignore
 		README.rm
 		database.db
@@ -32,6 +35,10 @@ The following guidelines will help final users to understand the whole project b
 
 - ```LICENSE.txt``` file contain the chosen license for GIT5 project.
 
+##### The folder called ```test``` collects the following files:
+- ```__init__.py``` file is required to make Python treat directories containing the file as packages: ignore it!
+- ```test_module.py``` is a file which aim is to check if the code is working as it should. It contains three test cases to check the validity of different inputs.
+
 ##### Other files in the repository:
 
 - ```.gitignore``` file specifies intentionally untracked files that git should ignore.
@@ -40,7 +47,7 @@ The following guidelines will help final users to understand the whole project b
 
 - ```databmanager``` file that allows to manage user database operations. It enable to create, check and remove accounts.
 
-- ```h_manager``` file that allows to add user researches into a csv file.
+- ```h_manager``` file that allows to add user's researches into a csv file.
 
 - ```history.csv``` csv file that contains records of all the user's tracks.
 
@@ -169,16 +176,32 @@ In the command line the user must add some mandatory arguments to be able to use
 
 QUI MANCA SOLO LA PARTE DEI PARAMETRI ED è CONCLUSO 
 
-E POI LA PARTE DEL CSV
+
 
 
 ## DOCUMENTATION
 Documentation is stored in the repository documentation. Please have a look to understand the functions of our modules better.
+You should go in documentation/_build/html and select a file and it will open the documentation.
 
+## CSV
+In h_manager.py there is a code where the history of all the searches made in local is saved. This data is saved in a csv file created ad hoc, named history.csv.
 
 ## TESTING
+Tests on parts of the code are provided here: ```music_package/test/``` .  
+You can find the module ```test_module.py```. 
+To run them, use:```python -m unittest -b music_package/tests/test_module.py```:
+
+```
+python -m unittest -b music_package/tests/test_module.py
+test_correct_values(self) ... ok
+test_empty_string(self) ... ok
+test_wrong_values(self) ... ok
 
 
+Ran 3 tests in 1.114s
+
+OK
+```
 
 ## SUPPORT
 
@@ -192,10 +215,10 @@ Do not hesitate if you need any support!
 - [Stefano Businaro](https://github.com/businer)
 
 
-- [Divincenzo Francesco](https://github.com/divi999)
+- [Francesco Di Vincenzo](https://github.com/divi999)
 
 
-- [Grego Federico](https://github.com/Fede2302)
+- [Federico Grego](https://github.com/Fede2302)
 
 
 - [Virginia Massaccesi](https://github.com/Virginiaemme)
